@@ -1,14 +1,20 @@
+import { Dock } from "@/features/dock/components/Dock";
+import { TopBar } from "@/features/topbar/components/TopBar";
+
 export function Desktop() {
     return (
-        <section className="relative min-h-screen overflow-hidden bg-[#080b18]">
+        <section className="relative isolate h-dvh w-full overflow-hidden bg-[#080b18]">
             <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(76,29,149,0.38),transparent_38%),linear-gradient(145deg,#030515_0%,#09052a_48%,#02030d_100%)]"
+                className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_20%,rgba(76,29,149,0.38),transparent_38%),linear-gradient(145deg,#030515_0%,#09052a_48%,#02030d_100%)]"
             />
 
-            <div className="relative z-10 flex min-h-screen items-center justify-center">
+            <TopBar />
+            <Dock />
+
+            <main className="relative z-10 flex h-full items-center justify-center pt-10">
                 <div className="text-center">
-                    <p className="mb-2 text-sm tracking-[0.35em] text-slate-400 uppercase">
+                    <p className="mb-2 text-sm uppercase tracking-[0.35em] text-slate-400">
                         Portfolio Operating System
                     </p>
 
@@ -24,7 +30,7 @@ export function Desktop() {
                         Senior Software Engineer
                     </p>
                 </div>
-            </div>
+            </main>
         </section>
     );
 }
